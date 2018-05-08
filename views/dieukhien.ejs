@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<title> Điều khiển </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="jquery.js"></script> 
+	<link rel="stylesheet" href="style/dieukhien.css">
+	<script src="bootstrap.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <script type="text/javascript" src="http://207.148.119.205/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="script/dieukhien.js"></script>
+</head>
+<body >
+    <div class="wrap">
+	<!-- start header -->
+    <div class="header hidden-xs">
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-md-push-1">
+               <a href="http://www.shinko.vn"><img src="./images/shinko_logo.png" alt="logo" class="img-responsive"></a>
+            </div>
+    	</div>
+    </div>
+    <!-- end header -->
+    <!-- start nav menu -->
+           
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>   
+                <a class="navbar-brand hidden-xs" href="/"><i class="fa fa-home"></i></a>            
+            </div>          
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav menu">
+                    <li><a href="/trangchu">Trang chủ</a></li>
+                    <li class="active"><a href="/dieukhien">Điều khiển</a></li>
+                    <li><a href="/sanpham">Sản phẩm</a></li>
+                    <li><a href="/dothi">Đồ thị</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end nav menu -->
+
+    <!-- Start system -->
+    <div class="system">
+        <div class="container-fluid">
+                 <div class="row"> 
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 system-status">
+                  <img src="./images/system.png" alt="" class="responsive"> 
+                </div>
+                
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 log-in">
+                    <h3>User name:</h3>
+                    <input type="text" id ="txtUserName" />
+                    <button onclick="logInFunction()" class="btnReset" style="width: 40%">Đăng nhập</button>
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 set-gia-tri">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <p>Loại cây:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group" style="font-weight: bold;">
+                          <select class="form-control" id="inputLoaiCay">
+                            <option>Cải thìa</option>
+                            <option>Xà lách</option>
+                            <option>Mồng tơi</option>
+                            <option>Rau muống</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <p>EC: <input id="inputEC" type="number" value="2.5"> <button onclick="setFunction()" class="btnSet" style="width: 40%">Set</button></p>
+                    <p>pH: <input id="inputpH" type="number" value="6.0"> <button onclick="resetFunction()" class="btnReset" style="width: 40%">Reset</button></p>
+                    </div>
+                    
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <p>Giai đoạn:</p>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group" style="font-weight: bold;">
+                          <select class="form-control" id="inputGiaiDoan">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <p>Thời gian: <span class="date" id="inputTime">...</span></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                            <button onClick="startFunction()" class="btnStart">Start</button>     
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-md-push-1">
+                            <button onClick="stopFunction()" class="btnStop">Stop</button>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="thoigian">
+            <div class="row system-data">
+                <div class="row text-center ">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 info-system">
+                        <p>Loại cây </p>
+                        <span id="setLoaiCay">..</span>
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 info-system">
+                        <p>Giai đoạn</p>
+                        <span id="setGiaiDoan">..</span>
+                        
+                    </div>
+                    <!-- <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 info-system">
+                        <p>EC:</p>
+                        <span id="setEC">..</span>
+                        
+                    </div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 info-system">
+                        <p>pH</p>
+                        <span id="setpH">..</span>
+                        
+                    </div> -->
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 info-system">
+                        <p>Ngày bắt đầu</p>
+                        <span id="setStartDay">0</span>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 info-system">
+                        <p>Số ngày đã trồng</p>
+                        <span id="timeOfGrow">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Giá trị cài đặt</th>
+              <th scope="col">Giá trị đo</th>
+              <th scope="col">Bơm tăng EC</th>
+              <th scope="col">Bơm giảm EC</th>
+              <th scope="col">Bơm tăng pH</th>
+              <th scope="col">Bơm giảm pH</th>
+              <th scope="col">Bơm dung dịch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">EC (mS/cm2)</th>
+              <td><span id="setEC">..</span></td>
+              <td><span id="EC">..</span></td>
+              
+              <td rowspan="4"><span id="B1">..</span></td>
+               <td rowspan="4"><span id="B2">..</span></td>
+               <td rowspan="4"><span id="B3">..</span></td>
+                <td rowspan="4"><span id="B4">..</span></td> 
+                <td rowspan="4"><span id="B0">..</span></td>
+            </tr>
+            <tr>
+              <th scope="row">pH</th>
+              <td><span id="setpH">..</span></td>
+              <td><span id="pH">..</span> </td>
+              
+            </tr>
+            <tr>
+              <th scope="row">Nhiệt độ (&#176C)</th>
+              <td></td>
+              <td><span id="tempEnv">.. </span> </td>
+              
+            </tr>
+            <th scope="row">Độ ẩm (%)</th>
+              <td></td>
+              <td><span id="humd">..</span></td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+           
+                
+            </div> 
+    </div>
+    <div class="container">
+        
+    </div>
+    <!-- End System -->
+
+    <!--  Start Footer -->
+   <div class="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-md-push-1">
+                            <h3>Người thực hiện</h3>
+                            <p color: white>Nhóm sinh viên PFIEV thực tập tại công ty nghiên cứu phát triển Shinko Technos Việt Nam. Và em xin chân thành cảm ơn các anh Thắng, Huy, chị Kỳ và thầy Thanh đã hết lòng giúp đỡ để hoàn thiện sản phẩm này.</p>                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   <!-- End Footer -->
+</div>
+</body>
+</html>

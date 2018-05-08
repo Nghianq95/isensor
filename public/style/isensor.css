@@ -1,0 +1,201 @@
+*{margin:0;padding:0; }
+ 
+.col-center-block {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+html,  body,  .container {
+	height: 100%;
+	width: 100%;
+}
+.container {
+	display: table;
+	vertical-align: middle;
+}
+.vertical-center-row {
+	display: table-cell;
+	vertical-align: middle;
+}
+.login-screen-bg {
+	background-color: #EFEFEF;
+}
+.panel-git {
+	border: 1px solid #d8dee2;
+}
+.panel-git h3 {
+	color: #fff;
+}
+.panel-git .panel-heading {
+	background-color: #829AA8;
+}
+.login-widget {
+	padding: 15px;
+	-moz-box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+	-webkit-box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+	box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+	background-color: #FFF;
+}
+.login .modal-footer {
+	border-top: 0;
+	margin-top: 0px;
+	padding: 10px 20px 20px;
+}
+.login .modal-header {
+	border: 0 none;
+	padding: 15px 15px 15px;
+}
+.login .modal-body {
+	background-color: #485563;
+	color: #FFF;
+}
+.login .division {
+	float: none;
+	margin: 0 auto 18px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+.login .division .line {
+	border-top: 1px solid #DFDFDF;
+	position: absolute;
+	top: 10px;
+	width: 34%;
+}
+.login .division .line.l {
+	left: 0;
+}
+.login .division .line.r {
+	right: 0;
+}
+.login .division span {
+	color: #FFF;
+	font-size: 17px;
+}
+.login .box .social {
+	float: none;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+.login .social .circle {
+	background-color: #EEEEEE;
+	color: #FFFFFF;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	display: inline-block;
+	margin: 0 17px;
+	padding: 15px;
+}
+.login .social .circle .fa {
+	font-size: 16px;
+}
+.login .social .facebook {
+	background-color: #455CA8;
+	color: #FFFFFF;
+}
+.login .social .google {
+	background-color: #F74933;
+}
+.login .social .github {
+	background-color: #403A3A;
+}
+.login .facebook:hover {
+	background-color: #6E83CD;
+}
+.login .google:hover {
+	background-color: #FF7566;
+}
+.login .github:hover {
+	background-color: #4D4D4d;
+}
+.login .forgot {
+	color: #000;
+	margin-left: 0;
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+.login .btn-login, .registerBox .btn-register {
+	background-color: #00BBFF;
+	border-color: #00BBFF;
+	border-width: 0;
+	color: #FFFFFF;
+	display: block;
+	margin: 0 auto;
+	padding: 15px 50px;
+	text-transform: uppercase;
+	width: 100%;
+}
+.login .btn-login:hover, .registerBox .btn-register:hover {
+	background-color: #00A4E4;
+	color: #FFFFFF;
+}
+.login .form-control {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.09);
+	-moz-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+	-webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+	box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+	color: #FFFFFF;
+}
+.login .form-control:hover {
+	background-color: rgba(0, 0, 0, .16);
+}
+.login .form-control:focus {
+	-moz-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+	-webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+	background-color: rgba(0, 0, 0, 0.23);
+	color: #FFFFFF;
+}
+.login .box .form input[type="text"], .login .box .form input[type="password"] {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	color:#CCC;
+	font-size: 16px;
+	height: 46px;
+	margin-bottom: 5px;
+	padding: 13px 12px;
+	width: 100%;
+}
+.big-login, .big-register {
+	background-color: #00bbff;
+	color: #FFFFFF;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border-width: 2px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 200;
+	padding: 16px 60px;
+	text-transform: uppercase;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+.big-login:hover {
+	background-color: #00A4E4;
+	color: #FFFFFF;
+}
+.big-register {
+	background-color: rgba(0, 0, 0, .0);
+	color: #00bbff;
+	border-color: #00bbff;
+}
+.big-register:hover {
+	border-color: #00A4E4;
+	color: #00A4E4;
+}
+.login-screen-bg {
+	background-color: #EFEFEF;
+} 
+ 

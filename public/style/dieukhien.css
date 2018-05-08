@@ -1,0 +1,147 @@
+*{}
+body{font-family: Arial, "Time New Roman", sans-serif;}
+.clear{
+    clear: both;
+}
+/*Start header*/
+.header {
+    max-height: 60px;
+}
+
+.info-header {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 18px;
+    padding-right: 0px;
+}
+
+.info-header i {
+    font-size: 2.2rem;
+    color: #204b87;
+}
+
+.info-header span {
+    margin-right: 12px;
+    color: black;
+}
+/*End Header*/
+
+/* Start menu*/
+
+.menu li{
+	font-size: 20px;
+	font-weight: bold;
+}
+/* End menu*/
+
+/* Start System */
+.system{
+    background-color: #C3C3C4;
+    padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0px;
+}
+.system img.responsive {
+    max-width: 100%;
+}
+.set-gia-tri {
+    margin-top: 1vw;
+    font-weight: bold;
+    border: solid 1px;
+    padding: 2vw 2vw;
+}
+.set-gia-tri input{
+    width: 30%;
+}
+.set-gia-tri .btnStart, .btnStop{
+    width: 100%;
+    margin-left: 3vw;
+}
+.system-data {
+    padding-left: 15px; 
+
+}
+.system-data span{
+    font-weight: bold;
+}
+.info-system{
+    border: solid 1px;
+}
+.info-system p{
+    border-bottom:  solid 1px;
+}
+.table {
+   margin: auto;
+   width: 90% !important; 
+   text-align: center;
+}
+
+select#inputGiaiDoan, #inputLoaiCay {
+    max-height: 2.3vw;
+    font-size: 1.5vw;
+    padding: 0 0;
+}
+
+
+/* End System */
+
+/*Start footer*/
+.footer{
+   margin-top: 2vw;
+    background-color: black;
+}
+.footer-content{
+    padding-top: 2vw;
+}
+.footer-content h3{
+ font-size: 2vw;
+  font-weight: bold;
+  color: white;
+}
+.footer-content p i{
+    font-size: 2vw;
+    color: white;
+}
+.footer-content p span{
+    color: #747474;
+    font-size: 1.5vw;
+}
+.footer-content p{
+    color: #747474;
+    font-size: 1.5vw;
+}
+.footer-content i{
+    font-size: 2vw;
+    padding-right: 1vw; 
+    color: yellow;
+}
+.footer-content label{
+    font-size: 2vw;
+    color: white;
+}
+.footer-content input{
+    background-color: #1b1b1b;
+    border: none;
+}
+.footer-content-form{
+    padding-bottom: 2vw;
+}
+.footer-content-form h2{
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+}
+.footer-fill input{
+    width: 90%;
+}
+.footer-fill button {
+    width: 60%;
+    text-align: center;
+    background-color: #0048ac;
+    color: white;
+    border: none;
+    font-size: 1.5vw;
+}
+/*End footer*/
